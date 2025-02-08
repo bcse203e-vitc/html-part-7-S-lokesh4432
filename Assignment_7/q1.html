@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <script>
+        function startGame() {
+            const number=Math.floor(Math.random() * 100);
+
+            let at=5;
+
+
+            while(at>0){
+                let guess=parseInt(prompt(`Guess a number from {1-100} remaining attempts: ${at}`))
+                if(isNaN(guess)|| guess <1 || guess > 100){
+                    alert("please give valid input");
+                    continue;
+                }
+                else if(guess===number){
+                    alert("right guess" );
+                    break;
+                }
+                else if(guess>number){
+                    alert("too high");
+                    
+                }
+                else{
+                    alert("too low");
+                
+                }
+                at--;
+                if(at===0){
+                    alert(`game over right number is ${number}`);
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <button onclick="startGame()">Start Game</button>
+</body>
+</html>
