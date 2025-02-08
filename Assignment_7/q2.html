@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <script>
+        function run() {
+            let out="";
+            for(let i=0 ;i < 51;i++){
+                if(i%3===0 && i%5===0){
+                    out+="fizzbuzz<br>";
+                }
+                else if(i%3===0){
+                    out+="fizz<br>";
+                }
+                else if(i%5===0){
+                    out+="buzz<br>";
+                }
+                else{
+                    out+=i;
+                }
+
+                document.getElementById("r").innerHTML=out;
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <button onclick="run()">Start Game</button>
+    <p id="r"></p>
+</body>
+</html>
