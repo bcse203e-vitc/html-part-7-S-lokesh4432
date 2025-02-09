@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <script>
+        function run() {
+            let str=document.getElementById("op").value;
+            let arr=str.split(",");
+            let fre={};
+            let dupli=new Set();
+            let unique=[];
+            for(let i of arr){
+                if(fre[i]){
+                    fre[i]++;
+                    dupli.add(i);
+                }
+                else{
+                    fre[i]=1;
+                    unique.push(i);
+
+                }
+            }
+            document.getElementById("r").innerHTML="duplicate values:" + [...dupli].join(",");
+            document.getElementById("k").innerHTML="Unique array:"+ unique.join(",");
+        }
+    </script>
+</head>
+<body>
+    <h1>Plindrome Checker</h1>
+    <label>Enter a string or number</label>
+    <input id="op"><br><br>
+    <button onclick="run()">Start Game</button>
+
+    <p id="r"></p>
+    <p id="k"></p>
+</body>
+</html>
