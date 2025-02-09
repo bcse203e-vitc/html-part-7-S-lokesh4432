@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <script>
+        function run() {
+            let str=document.getElementById("op").value;
+            let arr=str.split(",");
+
+            for(let i=0;i<arr.length-1;i++){
+                for(let j=0;j<arr.length-i-1;j++){
+                    if( arr[j] <arr[j+1]){
+                        let t=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=t;
+                    }
+                }
+            }
+            let fi=arr[0];
+            let se=null;
+            for(let i=1;i<arr.length;i++){
+                if(arr[i]<fi){
+                    se=arr[i];
+                    break;
+                }
+            }
+            document.getElementById("r").innerHTML="second largest is: "+se;
+        }
+    </script>
+</head>
+<body>
+    <h1>second largest</h1>
+    <label>Enter a string or number</label>
+    <input id="op"><br><br>
+    <button onclick="run()">Start Game</button>
+
+    <p id="r"></p>
+    <p id="k"></p>
+</body>
+</html>
