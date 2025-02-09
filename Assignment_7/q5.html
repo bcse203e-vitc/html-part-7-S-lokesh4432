@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <script>
+        function run() {
+            let str = document.getElementById("op").value;
+            let c = str.length; // Correct way to count characters
+            document.getElementById("r").innerHTML = "Character count: " + c;
+        }
+    </script>
+</head>
+<body>
+    <h1>Character Counter</h1>
+    <label>Enter a string or number:</label>
+    <input id="op"><br><br>
+    <button onclick="run()">Count Characters</button>
+    <p id="r"></p>
+</body>
+</html>
